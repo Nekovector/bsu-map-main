@@ -9,12 +9,11 @@ export default function HistoricalBuildingInfo({ currentObject, setCurrentObject
   return (
     <Container className={css.objectInfo}>
       <Row>
-        <Col xs='auto'>
-        </Col>
+        <Col xs={1}></Col>
         <Col xs={10}>
           <h2 className={css.objectTitle}>{currentObject.name}</h2>
         </Col>
-        <Col xs={2}>
+        <Col xs={1}>
           <CloseButton onClick={() => { setCurrentObject(null); setNumberOfColumns(12) }} />
         </Col>
       </Row>

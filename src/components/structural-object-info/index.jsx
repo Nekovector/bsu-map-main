@@ -9,15 +9,15 @@ export default function StructuralObjectInfo({ currentObject, setCurrentObject, 
   return (
     <Container className={css.objectInfo}>
       <Row>
-        <Col xs={2}>
+        <Col xs={1}>
           <a href={currentObject.website}>
             <img className={css.structuralObjectLogo} src={`/drawable/structural_objects_logos/${currentObject.icon.logoPath}`} alt="Logo" />
           </a>
         </Col>
-        <Col xs={8}>
-          <h3 className={css.objectTitle}>{currentObject.subdivision}</h3>
+        <Col xs={10}>
+          <h2 className={css.objectTitle}>{currentObject.subdivision}</h2>
         </Col>
-        <Col xs={2}>
+        <Col xs={1}>
           <CloseButton onClick={() => { setCurrentObject(null); setNumberOfColumns(12) }} />
         </Col>
       </Row>

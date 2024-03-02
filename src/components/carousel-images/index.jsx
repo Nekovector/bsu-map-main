@@ -23,6 +23,8 @@ export default function CarouselImages({ buildingId, isModernBuilding }) {
     : "/buildings_images/historical_buildings";
 
   return (
+    <>
+    {photos.length !== 0 &&
     <Carousel variant="dark">
       {photos.map((photo, i) => (
         <Carousel.Item key={i} className={css.caroucelItem}>
@@ -37,5 +39,7 @@ export default function CarouselImages({ buildingId, isModernBuilding }) {
         </Carousel.Item>
       ))}
     </Carousel>
-  )
+    }
+    </>
+  );
 }
