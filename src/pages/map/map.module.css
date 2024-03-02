@@ -1,0 +1,12 @@
+.container {
+  width: 90%;
+}
+
+.map {
+  height: 90vh;
+}
+
+.infoCol {
+  background-color: rgb(239, 239, 239);
+  padding: 0;
+}

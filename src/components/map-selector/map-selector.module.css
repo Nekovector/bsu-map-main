@@ -1,0 +1,14 @@
+.mapSelectorContainer {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  height: auto;
+  width: auto;
+  border-radius: 4px;
+}
+
+.mapSelectorContainer select {
+  width: 150px;
+  height: 20px;
+}

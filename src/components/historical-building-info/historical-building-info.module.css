@@ -1,0 +1,13 @@
+.objectInfo {
+  box-sizing: border-box;
+  padding: 0 12px;
+}
+
+.objectTitle {
+  text-align: center;
+}
+
+.expandedContainer {
+  max-height: 20rem;
+  overflow-y: auto;
+}

@@ -1,0 +1,21 @@
+.footer {
+  position: sticky;
+  width: 100%;
+  z-index: 1000;
+  bottom: 0;
+  padding-left: 5%;
+  text-align: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: white;
+}
+
+.footerTitle {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.footerText {
+  margin-bottom: 5px;
+}
+

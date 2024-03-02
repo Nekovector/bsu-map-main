@@ -1,0 +1,21 @@
+.objectInfo {
+  box-sizing: border-box;
+  padding: 0 12px;
+}
+
+.objectTitle {
+  text-align: center;
+}
+
+.expandedContainer {
+  overflow-y: auto;
+  max-height: 20rem;
+}
+
+.websiteRow {
+  text-align: center;
+}
+
+.structuralObjectLogo{
+  width: 50px;
+}
