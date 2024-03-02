@@ -7,7 +7,8 @@ export default function About() {
   return (
     <Container fluid className={css.container}>
       <Row>
-        <Col className={css.info}>
+        <Col md={3}></Col>
+        <Col md={6}>
           <Card>
             <Card.Header>Интерактивная карта становления БГУ</Card.Header>
             <Card.Body>
@@ -20,6 +21,7 @@ export default function About() {
             </Card.Body>
           </Card>
         </Col>
+        <Col md={3}></Col>
       </Row>
     </Container>
   )
