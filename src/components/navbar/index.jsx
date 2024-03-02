@@ -1,6 +1,7 @@
 import React from "react";
 import { LinkContainer } from 'react-router-bootstrap';
 import { Navbar, Container, Nav } from "react-bootstrap";
+
 import "../../custom-bootstrap-coloring.scss";
 
 export default function NavBar() {

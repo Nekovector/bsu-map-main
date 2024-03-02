@@ -7,6 +7,6 @@
 }
 
 .infoCol {
+  border: 1px solid;
   background-color: rgb(239, 239, 239);
-  padding: 0;
 }
