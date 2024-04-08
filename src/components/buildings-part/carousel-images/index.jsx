@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Carousel } from 'react-bootstrap';
-import { BuildingPhotosService } from "../../services/building-photos.service";
+import { BuildingPhotosService } from "../../../services/building-photos.service";
 import parse from 'html-react-parser';
 
 import css from "./carousel-images.module.css";

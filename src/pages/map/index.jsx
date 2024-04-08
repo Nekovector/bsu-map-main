@@ -4,11 +4,11 @@ import L, { Icon } from 'leaflet';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import MarkerClusterGroup from '@changey/react-leaflet-markercluster';
 
-import MapSelector from '../../components/map-selector';
-import ModernBuildingCard from '../../components/modern-building-card';
-import StructuralObjectInfo from '../../components/structural-object-info';
-import HistoricalBuildingCard from '../../components/historical-building-card';
-import HistoricalBuildingInfo from '../../components/historical-building-info';
+import MapSelector from '../../components/buildings-part/map-selector';
+import ModernBuildingCard from '../../components/buildings-part/modern-building-card';
+import StructuralObjectInfo from '../../components/buildings-part/structural-object-info';
+import HistoricalBuildingCard from '../../components/buildings-part/historical-building-card';
+import HistoricalBuildingInfo from '../../components/buildings-part/historical-building-info';
 
 import { BuildingsService } from '../../services/buildings.service';
 
