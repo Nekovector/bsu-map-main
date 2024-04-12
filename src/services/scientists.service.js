@@ -1,10 +1,12 @@
 import { Api } from "./api.service";
 
 export const ScientistsService = {
-    getScientists: () => {
-        return Api.get('/api/scientists/all').then((response) => response.data);
+    getScientists: async () => {
+        const response = await Api.get('/api/scientists/all');
+        return response.data;
     },
-    createScientist: (data) => {
-        return Api.post('/api/scientists/create', data).then((response) => response.data);
+    createScientist: async (data) => {
+        const response = await Api.post('/api/scientists/create', data);
+        return response.data;
     }
 }

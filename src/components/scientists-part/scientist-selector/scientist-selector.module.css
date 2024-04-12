@@ -1,0 +1,14 @@
+.scientistSelectorContainer {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  height: auto;
+  width: auto;
+  border-radius: 4px;
+}
+
+.scientistSelectorContainer select {
+  width: 220px;
+  height: 20px;
+}

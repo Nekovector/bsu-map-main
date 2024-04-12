@@ -1,0 +1,11 @@
+.scientistInfo {
+  box-sizing: border-box;
+  padding-top: 12px;
+  max-height: 90vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.expandedContainer {
+  padding-top: 12px;
+}
