@@ -5,6 +5,7 @@ import Footer from './components/common/footer';
 import Map from './pages/map';
 import About from './pages/about'
 import InDevelopment from './pages/in-development'
+import CreateScientistForm from './components/scientists-part/create-scientist-form';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/scientists" Component={Map} />
         <Route path="/about" Component={About} />
         <Route path="/in-development" Component={InDevelopment} />
+        <Route path="/create-scientist" Component={CreateScientistForm} />
       </Routes>
       <Footer />
     </BrowserRouter>
