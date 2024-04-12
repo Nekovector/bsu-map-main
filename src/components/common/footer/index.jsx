@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../../custom-bootstrap-coloring.scss";
+import "../../../custom-bootstrap-coloring.scss";
 import css from "./footer.module.css";
 
 export default function Footer() {

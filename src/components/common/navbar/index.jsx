@@ -2,7 +2,7 @@ import React from "react";
 import { LinkContainer } from 'react-router-bootstrap';
 import { Navbar, Container, Nav } from "react-bootstrap";
 
-import "../../custom-bootstrap-coloring.scss";
+import "../../../custom-bootstrap-coloring.scss";
 
 export default function NavBar() {
   return (
@@ -11,7 +11,7 @@ export default function NavBar() {
         <Navbar.Brand href="https://bsu.by/">
           <img
             alt=""
-            src={require('../../drawable/app-components-icons/navbar-logo.svg').default}
+            src={require('../../../drawable/app-components-icons/navbar-logo.svg').default}
             width="30"
             height="30"
             className="d-inline-block align-top"
