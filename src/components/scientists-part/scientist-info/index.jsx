@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row } from 'react-bootstrap';
 import parse from 'html-react-parser';
+import { DateOnlyString } from "../../../helpers/date-time";
 
 import css from "./scientist-info.module.css";
 
@@ -10,13 +11,16 @@ export default function ScientistInfo({ currentScientist }) {
     return a.ordinalNumber - b.ordinalNumber;
   });
 
+  const birthDate = DateOnlyString(currentScientist.birthDate);
+  const deathDate = DateOnlyString(currentScientist.deathDate);
+
   return (
     <Container fluid className={css.scientistInfo}>
       <Row>
         <h2>{`${currentScientist.firstName} ${currentScientist.patronymic} ${currentScientist.lastName}`}</h2> 
         <p>
-          {`Дата рождения: ${currentScientist.birthDate}`}<br/>
-          {`Дата смерти: ${currentScientist.deathDate}`}
+          {`Дата рождения: ${birthDate}`}<br/>
+          {`Дата смерти: ${deathDate}`}
         </p>
       </Row>
       <Row>
