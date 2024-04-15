@@ -81,7 +81,7 @@ export default function Map() {
           </MapContainer>
         </Col>
         {currentObject &&
-        <Col className={css.infoCol}>
+        <Col xl={12-numberOfColumns} className={css.infoCol}>
           {isModernMap(currentMap) &&
             <StructuralObjectInfo currentObject={currentObject} setCurrentObject={setCurrentObject} setNumberOfColumns={setNumberOfColumns} />
           }

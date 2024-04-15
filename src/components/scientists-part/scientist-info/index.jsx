@@ -11,7 +11,7 @@ export default function ScientistInfo({ currentScientist }) {
   });
 
   return (
-    <Container className={css.scientistInfo}>
+    <Container fluid className={css.scientistInfo}>
       <Row>
         <h2>{`${currentScientist.firstName} ${currentScientist.patronymic} ${currentScientist.lastName}`}</h2> 
         <p>
@@ -26,7 +26,7 @@ export default function ScientistInfo({ currentScientist }) {
       <Row>
         <h2>Памятные места</h2> 
         {memoryPlaces.map((mPlace =>
-          <div key={mPlace.ordinalNumber} className={css.expandedContainer}>
+          <div key={mPlace.ordinalNumber}>
             <h3>{mPlace.name}</h3>
             {parse(mPlace.description)}
           </div>

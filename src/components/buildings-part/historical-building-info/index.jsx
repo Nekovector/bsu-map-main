@@ -7,7 +7,7 @@ import css from "./historical-building-info.module.css";
 
 export default function HistoricalBuildingInfo({ currentObject, setCurrentObject, setNumberOfColumns }) {
   return (
-    <Container className={css.objectInfo}>
+    <Container fluid className={css.objectInfo}>
       <Row>
         <Col xs={1}></Col>
         <Col xs={10}>

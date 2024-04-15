@@ -4,9 +4,11 @@
 
 .map {
   height: 90vh;
+  position: relative;
 }
 
 .infoCol {
-  border: 1px solid;
   background-color: rgb(239, 239, 239);
+  border: solid 1px;
+  border-top: none;
 }

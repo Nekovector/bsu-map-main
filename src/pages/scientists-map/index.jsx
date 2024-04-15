@@ -31,9 +31,10 @@ export default function ScientistsMap() {
     getData();
   }, []);
 
-  const updateCurrentScientist = (scientist) => {
+  const updateCurrentScientist = (scientistId) => {
+    const scientist = scientists.find((sc) => sc.id === scientistId);
     setCurrentScientist(scientist);
-    console.log(`Выбранный ученый: ${currentScientist}`);
+    console.log(scientist);
   }
 
   const switchMenu = () => {
@@ -52,14 +53,15 @@ export default function ScientistsMap() {
     <Container fluid className={css.container}>
       <Row>
         <Col xl={numberOfColumns} className='px-0'>
-          <MapContainer attributionControl={false} center={position} zoom={10} scrollWheelZoom={true}  className={css.map}>
+          <MapContainer attributionControl={false} center={position} zoom={10} scrollWheelZoom={true} className={css.map}>
             <TileLayer
               url="https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png"
             />
             <ScientistSelector scientistsCollection={scientists} onChange={updateCurrentScientist} />
             <ToggleMenu onClick={switchMenu} />
             <MarkerClusterGroup>
-              {currentScientist && currentScientist.memoryPlaces.map(mPlace => (
+              {currentScientist && currentScientist.memoryPlaces &&
+                currentScientist.memoryPlaces.map(mPlace => (
                 <Marker
                   key={mPlace.id}
                   position={[mPlace.coordinates.latitude, mPlace.coordinates.longitude]}
@@ -70,9 +72,9 @@ export default function ScientistsMap() {
           </MapContainer>
         </Col>
         {menuIsOpened && currentScientist &&
-        <Col xl={12 - numberOfColumns} className={css.infoCol}>
-          <ScientistInfo currentScientist={currentScientist}/>
-        </Col> 
+          <Col xl={12 - numberOfColumns} className={css.infoCol}>
+            <ScientistInfo currentScientist={currentScientist}/>
+          </Col>
         }
       </Row>
     </Container>

@@ -7,7 +7,7 @@ import css from "./structural-object-info.module.css";
 
 export default function StructuralObjectInfo({ currentObject, setCurrentObject, setNumberOfColumns }) {
   return (
-    <Container className={css.objectInfo}>
+    <Container fluid className={css.objectInfo}>
       <Row>
         <Col xs={1}>
           <a href={currentObject.website}>
