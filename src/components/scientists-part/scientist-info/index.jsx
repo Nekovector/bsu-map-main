@@ -5,7 +5,7 @@ import { DateOnlyString } from "../../../helpers/date-time";
 
 import css from "./scientist-info.module.css";
 
-export default function ScientistInfo({ currentScientist }) {
+export default function ScientistInfo({ currentScientist, setMark, activateTransition }) {
   //Сортировка по порядковому номеру
   const memoryPlaces = currentScientist.memoryPlaces.sort((a, b) => {
     return a.ordinalNumber - b.ordinalNumber;
@@ -31,7 +31,14 @@ export default function ScientistInfo({ currentScientist }) {
         <h2>Памятные места</h2> 
         {memoryPlaces.map((mPlace =>
           <div key={mPlace.ordinalNumber}>
-            <h3>{mPlace.name}</h3>
+            <h3 
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                setMark([mPlace.coordinates.latitude, mPlace.coordinates.longitude]);
+                activateTransition(true);
+              }}>
+              {mPlace.name}
+            </h3>
             {parse(mPlace.description)}
           </div>
         ))}
