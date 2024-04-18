@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Accordion, AccordionBody } from 'react-bootstrap';
 import parse from 'html-react-parser';
 import { DateOnlyString } from "../../../helpers/date-time";
 
@@ -28,20 +28,31 @@ export default function ScientistInfo({ currentScientist, setMark, activateTrans
         <p>{currentScientist.biography}</p>
       </Row>
       <Row>
-        <h2>Памятные места</h2> 
-        {memoryPlaces.map((mPlace =>
-          <div key={mPlace.ordinalNumber}>
-            <h3 
-              style={{ cursor: "pointer" }}
-              onClick={() => {
-                setMark([mPlace.coordinates.latitude, mPlace.coordinates.longitude]);
-                activateTransition(true);
-              }}>
-              {mPlace.name}
-            </h3>
-            {parse(mPlace.description)}
-          </div>
-        ))}
+        <h2>Памятные места</h2>
+        <Accordion defaultActiveKey={0}>
+          {memoryPlaces.map((mPlace, index) =>
+            <>
+              <h3 
+                style={{ cursor: "pointer" }}
+                onClick={() => {
+                  setMark([mPlace.coordinates.latitude, mPlace.coordinates.longitude]);
+                  activateTransition(true);
+                }}
+              >
+                {mPlace.name}
+              </h3>
+              <Accordion.Item eventKey={index}>
+                <Accordion.Header>{mPlace.ordinalNumber}</Accordion.Header>
+                <AccordionBody>
+                  <div key={mPlace.ordinalNumber}>
+                    {parse(mPlace.description)}
+                  </div>
+                </AccordionBody>
+              </Accordion.Item>
+              <br/>
+            </>
+          )}
+        </Accordion> 
       </Row>
     </Container>
   );
