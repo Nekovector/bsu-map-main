@@ -1,7 +1,17 @@
+@import '../../../custom-bootstrap-coloring.scss';
+
 .scientistInfo {
   box-sizing: border-box;
   padding: 12px;
   max-height: 90vh;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+h3 {
+  cursor: pointer;
+}
+
+h3:hover {
+  color: $primary;
 }

@@ -3,7 +3,7 @@ import { Container, Row, Accordion, AccordionBody } from 'react-bootstrap';
 import parse from 'html-react-parser';
 import { DateOnlyString } from "../../../helpers/date-time";
 
-import css from "./scientist-info.module.css";
+import css from "./scientist-info.module.scss";
 
 export default function ScientistInfo({ currentScientist, setMark, activateTransition }) {
   //Сортировка по порядковому номеру
@@ -33,7 +33,6 @@ export default function ScientistInfo({ currentScientist, setMark, activateTrans
           {memoryPlaces.map((mPlace, index) =>
             <>
               <h3 
-                style={{ cursor: "pointer" }}
                 onClick={() => {
                   setMark([mPlace.coordinates.latitude, mPlace.coordinates.longitude]);
                   activateTransition(true);
