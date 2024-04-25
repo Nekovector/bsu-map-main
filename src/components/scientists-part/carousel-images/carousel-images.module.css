@@ -1,7 +1,6 @@
 .carouselImage {
-  display: block;
   width: 100%;
-  min-height: 150px;
+  height: auto;
 }
 
 .carouselCaption {

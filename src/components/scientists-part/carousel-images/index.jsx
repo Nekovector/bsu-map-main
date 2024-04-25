@@ -24,7 +24,7 @@ export default function CarouselImages({ memoryPlaceId }) {
       {photos.length !== 0 &&
       <Carousel variant="dark">
         {photos.map((photo, index) => (
-          <Carousel.Item key={index} className={css.carouselItem}>
+          <Carousel.Item key={index} >
             <img
               className={css.carouselImage}
               src={`${absolutePhotoBasePath}/${photo.imagePath}`}
