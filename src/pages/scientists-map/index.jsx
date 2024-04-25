@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import MarkerClusterGroup from '@changey/react-leaflet-markercluster';
 
 import ScientistSelector from '../../components/scientists-part/scientist-selector';
 import ToggleMenu from '../../components/scientists-part/toggle-menu';
 import ScientistInfo from '../../components/scientists-part/scientist-info';
+import MemoryPlaceCard from '../../components/scientists-part/memory-place-card';
 
 import { ScientistsService } from '../../services/scientists.service';
 
@@ -81,6 +82,9 @@ export default function ScientistsMap() {
                   key={mPlace.id}
                   position={[mPlace.coordinates.latitude, mPlace.coordinates.longitude]}
                 >
+                <Popup>
+                  <MemoryPlaceCard memoryPlace={mPlace} />
+                </Popup>
                 </Marker>
               ))}
             </MarkerClusterGroup>

@@ -31,7 +31,7 @@ export default function ScientistInfo({ currentScientist, setMark, activateTrans
         <h2>Памятные места</h2>
         <Accordion defaultActiveKey={0}>
           {memoryPlaces.map((mPlace, index) =>
-            <>
+            <div key={index}>
               <h3 
                 onClick={() => {
                   setMark([mPlace.coordinates.latitude, mPlace.coordinates.longitude]);
@@ -43,13 +43,13 @@ export default function ScientistInfo({ currentScientist, setMark, activateTrans
               <Accordion.Item eventKey={index}>
                 <Accordion.Header>{mPlace.ordinalNumber}</Accordion.Header>
                 <AccordionBody>
-                  <div key={mPlace.ordinalNumber}>
+                  <div>
                     {parse(mPlace.description)}
                   </div>
                 </AccordionBody>
               </Accordion.Item>
               <br/>
-            </>
+            </div>
           )}
         </Accordion> 
       </Row>
