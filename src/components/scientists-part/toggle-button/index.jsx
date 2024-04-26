@@ -13,12 +13,12 @@ export default function ToggleButton({ onClick }) {
 
   return (
     <Button
-      style={{backgroundColor: "primary"}}
+      style={{backgroundColor: 'primary'}}
       className={css.toggleButton}
       onClick={() => {
         onClick();
         if (buttonName === 'Показать') {
-          setButtonName('Скрыть')
+          setButtonName('Скрыть');
         } else {
           setButtonName('Показать');
         }
@@ -30,4 +30,4 @@ export default function ToggleButton({ onClick }) {
 
 ToggleButton.propTypes = {
   onChange: PropTypes.func
-}
+};

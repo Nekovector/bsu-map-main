@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
 import { ListGroup, Card, Button } from 'react-bootstrap';
 
-import css from "./modern-building-card.module.css";
+import css from './modern-building-card.module.css';
 
 export default function ModernBuildingCard({ building, setCurrentObject, setNumberOfColumns }) {
   return (
@@ -30,5 +30,5 @@ ModernBuildingCard.propTypes = {
   building: PropTypes.object,
   setCurrentObject: PropTypes.func,
   setNumberOfColumns: PropTypes.func
-}
+};
 

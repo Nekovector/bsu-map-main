@@ -25,27 +25,27 @@ export default function CreateScientistForm() {
 
     console.log(scientist);
     const result = await ScientistsService.createScientist(scientist);
-    console.log(result)
-  }
+    console.log(result);
+  };
 
   return (
     <Form className={css.formStyle} onSubmit={addScientist}>
       <Form.Group>
         <Form.Label>Фамилия:</Form.Label>
-        <Form.Control type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} required /> 
+        <Form.Control type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} required />
       </Form.Group>
       <Form.Group>
         <Form.Label>Имя:</Form.Label>
-        <Form.Control type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} required /> 
-      </Form.Group> 
+        <Form.Control type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
+      </Form.Group>
       <Form.Group>
         <Form.Label>Отчество:</Form.Label>
         <Form.Control type="text" value={patronymic} onChange={(e) => setPatronymic(e.target.value)} />
       </Form.Group>
       <Form.Group>
         <Form.Label>Биография:</Form.Label>
-        <Form.Control as="textarea" rows={6} style={{ resize: "none" }}
-                      value={biography} onChange={(e) => setBiography(e.target.value)} />
+        <Form.Control as="textarea" rows={6} style={{ resize: 'none' }}
+          value={biography} onChange={(e) => setBiography(e.target.value)} />
       </Form.Group>
       <Form.Group>
         <Form.Label>Дата рождения:</Form.Label>
@@ -55,8 +55,8 @@ export default function CreateScientistForm() {
         <Form.Label>Дата смерти:</Form.Label>
         <Form.Control type="date" value={deathDate} onChange={(e) => setDeathDate(e.target.value)} min="1900-01-01" />
       </Form.Group>
-      <br/> 
-      <Button type="submit" style={{ width: "100%" }}>Добавить ученого</Button> 
+      <br />
+      <Button type="submit" style={{ width: '100%' }}>Добавить ученого</Button>
     </Form>
   );
 }

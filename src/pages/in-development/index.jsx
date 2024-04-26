@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import css from "./in-development.module.css";
+import css from './in-development.module.css';
 
 export default function InDevelopment() {
   return (
@@ -12,5 +12,5 @@ export default function InDevelopment() {
         </Col>
       </Row>
     </Container>
-  )
+  );
 }

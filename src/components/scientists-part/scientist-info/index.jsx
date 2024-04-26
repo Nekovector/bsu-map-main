@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Accordion, AccordionBody } from 'react-bootstrap';
 import parse from 'html-react-parser';
-import { DateOnlyString } from "../../../helpers/date-time";
+import { DateOnlyString } from '../../../helpers/date-time';
 
-import css from "./scientist-info.module.scss";
+import css from './scientist-info.module.scss';
 
 export default function ScientistInfo({ currentScientist, setMark, activateTransition }) {
   const [birthDate, setBirthDate] = useState();
@@ -16,7 +16,7 @@ export default function ScientistInfo({ currentScientist, setMark, activateTrans
     setMemoryPlaces(currentScientist.memoryPlaces.sort((a, b) => {
       return a.ordinalNumber - b.ordinalNumber;
     }));
-  }, [currentScientist])
+  }, [currentScientist]);
 
   return (
     <Container fluid className={css.scientistInfo}>

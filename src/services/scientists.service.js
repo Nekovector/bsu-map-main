@@ -1,4 +1,4 @@
-import { Api } from "./api.service";
+import { Api } from './api.service';
 
 export const ScientistsService = {
     getScientists: async () => {
@@ -9,4 +9,4 @@ export const ScientistsService = {
         const response = await Api.post('/api/scientists/create', data);
         return response.data;
     }
-}
+};

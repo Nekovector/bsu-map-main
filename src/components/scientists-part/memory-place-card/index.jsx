@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Card } from 'react-bootstrap';
 
-import CarouselImages from "../carousel-images";
+import CarouselImages from '../carousel-images';
 
 export default function MemoryPlaceCard({ memoryPlace, popupRef }) {
   return (
@@ -17,4 +17,4 @@ export default function MemoryPlaceCard({ memoryPlace, popupRef }) {
 
 MemoryPlaceCard.propTypes = {
   memoryPlace: PropTypes.object
-}
+};

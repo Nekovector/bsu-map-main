@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 import { Container, Row, Col, CloseButton } from 'react-bootstrap';
-import CarouselImages from "../carousel-images";
+import CarouselImages from '../carousel-images';
 import parse from 'html-react-parser';
 
-import css from "./structural-object-info.module.css";
+import css from './structural-object-info.module.css';
 
 export default function StructuralObjectInfo({ currentObject, setCurrentObject, setNumberOfColumns }) {
   return (
@@ -18,7 +18,7 @@ export default function StructuralObjectInfo({ currentObject, setCurrentObject, 
           <h2 className={css.objectTitle}>{currentObject.subdivision}</h2>
         </Col>
         <Col xs={1}>
-          <CloseButton onClick={() => { setCurrentObject(null); setNumberOfColumns(12) }} />
+          <CloseButton onClick={() => { setCurrentObject(null); setNumberOfColumns(12); }} />
         </Col>
       </Row>
       {/* row with photos */}
@@ -30,5 +30,5 @@ export default function StructuralObjectInfo({ currentObject, setCurrentObject, 
           <div className={css.expandedContainer}>{parse(currentObject.description)}</div>}
       </Row>
     </Container>
-  )
+  );
 }

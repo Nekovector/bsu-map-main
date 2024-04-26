@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
 import {Card, Button } from 'react-bootstrap';
 
@@ -17,5 +17,5 @@ HistoricalBuildingCard.propTypes = {
   building: PropTypes.object,
   setCurrentObject: PropTypes.func,
   setNumberOfColumns: PropTypes.func
-}
+};
 

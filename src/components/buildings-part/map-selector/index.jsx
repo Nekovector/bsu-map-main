@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
-import { FloatingLabel, Form } from 'react-bootstrap'
+import { FloatingLabel, Form } from 'react-bootstrap';
 
 import css from './map-selector.module.css';
 
@@ -12,10 +12,10 @@ export default function MapSelector({ selectedMap, onChange }){
         <option value="Historical">Historical</option>
       </Form.Select>
     </FloatingLabel>
-  )
+  );
 }
 
 MapSelector.propTypes = {
   selectedMap: PropTypes.string,
   onChange: PropTypes.func
-}
+};

@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
-import { BuildingPhotosService } from "../../../services/building-photos.service";
+import { BuildingPhotosService } from '../../../services/building-photos.service';
 import parse from 'html-react-parser';
 
-import css from "./carousel-images.module.css";
+import css from './carousel-images.module.css';
 
 export default function CarouselImages({ buildingId, isModernBuilding }) {
   const [photos, setPhotos] = useState([]);
@@ -12,15 +12,14 @@ export default function CarouselImages({ buildingId, isModernBuilding }) {
     const getPhotos = async (id) => {
       const photos = await BuildingPhotosService.getPhotos(id);
       setPhotos(photos);
-      console.log(photos);
-    }
+    };
 
     getPhotos(buildingId);
-  }, [buildingId])
+  }, [buildingId]);
 
   const currentAbsolutePhotoBasePath = isModernBuilding
-    ? "/buildings_images/modern_buildings"
-    : "/buildings_images/historical_buildings";
+    ? '/buildings_images/modern_buildings'
+    : '/buildings_images/historical_buildings';
 
   return (
     <>

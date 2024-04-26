@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 
-import css from "./about.module.css";
+import css from './about.module.css';
 
 export default function About() {
   return (
@@ -24,5 +24,5 @@ export default function About() {
         <Col md={3}></Col>
       </Row>
     </Container>
-  )
+  );
 }

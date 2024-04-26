@@ -12,7 +12,7 @@ import HistoricalBuildingInfo from '../../components/buildings-part/historical-b
 
 import { BuildingsService } from '../../services/buildings.service';
 
-import "../../custom-bootstrap-coloring.scss";
+import '../../custom-bootstrap-coloring.scss';
 import css from './map.module.css';
 
 export default function Map() {
@@ -23,7 +23,7 @@ export default function Map() {
 
   const isModernMap = (map) => {
     return map.toLocaleLowerCase() === 'modern';
-  }
+  };
 
   useEffect(() => {
     const getData = async () => {
@@ -36,25 +36,23 @@ export default function Map() {
         data = await BuildingsService.getHistoricalBuildings();
         setBuildings(data);
       }
-      console.log({data});
     };
 
     getData();
   }, [currentMap]);
 
   const updateCurrentMap = (map) => {
-    console.log('new map: ', map);
     setCurrentMap(map);
     setNumberOfColumns(12);
     setCurrentObject(null);
-  }
+  };
 
-  const position = [53.893924, 27.547005]
+  const position = [53.893924, 27.547005];
 
   return (
     <Container fluid className={css.container}>
       <Row>
-        <Col xl={numberOfColumns} className='px-0'>
+        <Col xl={numberOfColumns} className="px-0">
           <MapContainer attributionControl={false} center={position} zoom={10} scrollWheelZoom={true}  className={css.map}>
             <TileLayer
               url="https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png"

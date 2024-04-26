@@ -5,8 +5,8 @@ import NavBar from './components/common/navbar';
 import Footer from './components/common/footer';
 import Map from './pages/map';
 import ScientistsMap from './pages/scientists-map';
-import About from './pages/about'
-import InDevelopment from './pages/in-development'
+import About from './pages/about';
+import InDevelopment from './pages/in-development';
 import CreateScientistForm from './components/scientists-part/create-scientist-form';
 
 

@@ -10,7 +10,7 @@ import MemoryPlaceCard from '../../components/scientists-part/memory-place-card'
 
 import { ScientistsService } from '../../services/scientists.service';
 
-import "../../custom-bootstrap-coloring.scss";
+import '../../custom-bootstrap-coloring.scss';
 import css from './scientists-map.module.css';
 
 const MarkTransition = ( {coords, ready, setReady} ) => {
@@ -23,10 +23,10 @@ const MarkTransition = ( {coords, ready, setReady} ) => {
   }, [coords, ready, setReady, map]);
 
   return null;
-}
+};
 
 export default function ScientistsMap() {
-  const position = [53.893924, 27.547005]
+  const position = [53.893924, 27.547005];
   const [scientists, setScientists] = useState([]);
   const [currentScientist, setCurrentScientist] = useState(null);
   const [menuIsOpened, setMenuIsOpened] = useState(false);
@@ -43,8 +43,6 @@ export default function ScientistsMap() {
       if (data) {
         setCurrentScientist(data[0]);
       }
-
-      console.log(data);
     };
 
     getData();
@@ -53,8 +51,7 @@ export default function ScientistsMap() {
   const updateCurrentScientist = (scientistId) => {
     const scientist = scientists.find((sc) => sc.id === scientistId);
     setCurrentScientist(scientist);
-    console.log(scientist);
-  }
+  };
 
   const switchMenu = () => {
     if (menuIsOpened) {
@@ -64,12 +61,12 @@ export default function ScientistsMap() {
       setMenuIsOpened(true);
       setNumberOfColumns(8);
     }
-  }
+  };
 
   return (
     <Container fluid className={css.container}>
       <Row>
-        <Col xl={numberOfColumns} className='px-0'>
+        <Col xl={numberOfColumns} className="px-0">
           <MapContainer attributionControl={false} center={position} zoom={10} scrollWheelZoom={true} className={css.map}>
             <TileLayer
               url="https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png"

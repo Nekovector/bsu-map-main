@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 import { Container, Row, Col, CloseButton } from 'react-bootstrap';
-import CarouselImages from "../carousel-images";
+import CarouselImages from '../carousel-images';
 import parse from 'html-react-parser';
 
-import css from "./historical-building-info.module.css";
+import css from './historical-building-info.module.css';
 
 export default function HistoricalBuildingInfo({ currentObject, setCurrentObject, setNumberOfColumns }) {
   return (
@@ -14,7 +14,7 @@ export default function HistoricalBuildingInfo({ currentObject, setCurrentObject
           <h2 className={css.objectTitle}>{currentObject.name}</h2>
         </Col>
         <Col xs={1}>
-          <CloseButton onClick={() => { setCurrentObject(null); setNumberOfColumns(12) }} />
+          <CloseButton onClick={() => { setCurrentObject(null); setNumberOfColumns(12); }} />
         </Col>
       </Row>
       {/* row with photos */}
