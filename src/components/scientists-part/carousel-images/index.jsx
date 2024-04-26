@@ -4,7 +4,8 @@ import { MemoryPhotosService } from "../../../services/memory-photos.service";
 
 import css from "./carousel-images.module.css";
 
-export default function CarouselImages({ memoryPlaceId }) {
+
+export default function CarouselImages({ memoryPlaceId, popupRef }) {
   const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
@@ -15,7 +16,20 @@ export default function CarouselImages({ memoryPlaceId }) {
     }
 
     getPhotos(memoryPlaceId);
+
+    //Обновление модального окна после первого рендера карусели
+    const timer = setTimeout(() => {
+      popupRef.current.update();
+      console.log(popupRef.current)
+    }, 300);
+    
+    //Очистка таймера после размонтирования компоненты
+    return () => {
+      clearTimeout(timer);
+    };
   }, [memoryPlaceId])
+
+  
 
   const absolutePhotoBasePath = '/memoryPlaces_images';
 

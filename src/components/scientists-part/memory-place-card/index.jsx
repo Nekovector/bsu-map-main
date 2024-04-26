@@ -4,14 +4,12 @@ import { Card } from 'react-bootstrap';
 
 import CarouselImages from "../carousel-images";
 
-import css from './memory-place-card.module.css'
-
-export default function MemoryPlaceCard({ memoryPlace }) {
+export default function MemoryPlaceCard({ memoryPlace, popupRef }) {
   return (
-    <Card border="primary" className={css.card}>
+    <Card border="primary">
       <Card.Header as="h4">{memoryPlace.name}</Card.Header>
-      <Card.Body className={css.cardBody}>
-        <CarouselImages memoryPlaceId={memoryPlace.id} />
+      <Card.Body>
+        <CarouselImages memoryPlaceId={memoryPlace.id} popupRef={popupRef} />
       </Card.Body>
     </Card>
   );

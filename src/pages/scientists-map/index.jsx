@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import MarkerClusterGroup from '@changey/react-leaflet-markercluster';
@@ -33,6 +33,8 @@ export default function ScientistsMap() {
   const [numberOfColumns, setNumberOfColumns] = useState(12);
   const [currentMarkCoords, setCurrentMarkCoords] = useState([]);
   const [readyToTransition, setReadyToTransition] = useState(false);
+
+  const popupRef = useRef(null);
 
   useEffect(() => {
     const getData = async () => {
@@ -82,8 +84,8 @@ export default function ScientistsMap() {
                   key={mPlace.id}
                   position={[mPlace.coordinates.latitude, mPlace.coordinates.longitude]}
                 >
-                <Popup>
-                  <MemoryPlaceCard memoryPlace={mPlace} />
+                <Popup ref={popupRef}>
+                  <MemoryPlaceCard memoryPlace={mPlace} popupRef={popupRef} />
                 </Popup>
                 </Marker>
               ))}
