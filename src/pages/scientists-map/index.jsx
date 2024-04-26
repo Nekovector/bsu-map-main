@@ -4,7 +4,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import MarkerClusterGroup from '@changey/react-leaflet-markercluster';
 
 import ScientistSelector from '../../components/scientists-part/scientist-selector';
-import ToggleMenu from '../../components/scientists-part/toggle-menu';
+import ToggleButton from '../../components/scientists-part/toggle-button';
 import ScientistInfo from '../../components/scientists-part/scientist-info';
 import MemoryPlaceCard from '../../components/scientists-part/memory-place-card';
 
@@ -75,7 +75,7 @@ export default function ScientistsMap() {
               url="https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png"
             />
             <ScientistSelector scientistsCollection={scientists} onChange={updateCurrentScientist} />
-            <ToggleMenu onClick={switchMenu} />
+            <ToggleButton onClick={switchMenu} />
             <MarkTransition coords={currentMarkCoords} ready={readyToTransition} setReady={setReadyToTransition} />
             <MarkerClusterGroup>
               {currentScientist && currentScientist.memoryPlaces &&
