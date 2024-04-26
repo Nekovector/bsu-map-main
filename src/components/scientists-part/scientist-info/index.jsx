@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Accordion, AccordionBody } from 'react-bootstrap';
 import parse from 'html-react-parser';
 import { DateOnlyString } from "../../../helpers/date-time";
@@ -6,13 +6,17 @@ import { DateOnlyString } from "../../../helpers/date-time";
 import css from "./scientist-info.module.scss";
 
 export default function ScientistInfo({ currentScientist, setMark, activateTransition }) {
-  //Сортировка по порядковому номеру
-  const memoryPlaces = currentScientist.memoryPlaces.sort((a, b) => {
-    return a.ordinalNumber - b.ordinalNumber;
-  });
+  const [birthDate, setBirthDate] = useState();
+  const [deathDate, setDeathDate] = useState();
+  const [memoryPlaces, setMemoryPlaces] = useState([]);
 
-  const birthDate = DateOnlyString(currentScientist.birthDate);
-  const deathDate = DateOnlyString(currentScientist.deathDate);
+  useEffect(() => {
+    setBirthDate(DateOnlyString(currentScientist.birthDate));
+    setDeathDate(DateOnlyString(currentScientist.deathDate));
+    setMemoryPlaces(currentScientist.memoryPlaces.sort((a, b) => {
+      return a.ordinalNumber - b.ordinalNumber;
+    }));
+  }, [currentScientist])
 
   return (
     <Container fluid className={css.scientistInfo}>
@@ -30,7 +34,7 @@ export default function ScientistInfo({ currentScientist, setMark, activateTrans
       <Row>
         <h2>Памятные места</h2>
         <Accordion defaultActiveKey={0}>
-          {memoryPlaces.map((mPlace, index) =>
+          {memoryPlaces.map((mPlace, index) => (
             <div key={index}>
               <h3 
                 onClick={() => {
@@ -41,7 +45,7 @@ export default function ScientistInfo({ currentScientist, setMark, activateTrans
                 {mPlace.name}
               </h3>
               <Accordion.Item eventKey={index}>
-                <Accordion.Header>{mPlace.ordinalNumber}</Accordion.Header>
+                <Accordion.Header>Подробнее...</Accordion.Header>
                 <AccordionBody>
                   <div>
                     {parse(mPlace.description)}
@@ -50,7 +54,7 @@ export default function ScientistInfo({ currentScientist, setMark, activateTrans
               </Accordion.Item>
               <br/>
             </div>
-          )}
+          ))}
         </Accordion> 
       </Row>
     </Container>

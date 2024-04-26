@@ -17,7 +17,7 @@ export default function CarouselImages({ memoryPlaceId, popupRef }) {
 
     getPhotos(memoryPlaceId);
 
-    //Обновление модального окна после первого рендера карусели
+    //Обновление модального окна после рендера карусели
     const timer = setTimeout(() => {
       popupRef.current.update();
       console.log(popupRef.current)
