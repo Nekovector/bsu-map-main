@@ -5,4 +5,4 @@ export const MemoryPhotosService = {
     const response = await Api.get(`/api/photos/memoryPlaces?memoryPlaceId=${memoryPlaceId}`);
     return response.data;
   }
-}
+};
