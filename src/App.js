@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 
 import NavBar from './components/common/navbar';
@@ -16,7 +16,7 @@ function App() {
   const { pathname } = useLocation();
 
   return (
-    <>
+    <Suspense fallback="...loading">
       {!pathname.startsWith('/editor') && <NavBar />}
       {pathname.startsWith('/editor') && <EditorNavbar />}
       <Routes>
@@ -28,7 +28,7 @@ function App() {
         <Route path="/editor/create-scientist" Component={CreateScientistForm} />
       </Routes>
       {!pathname.startsWith('/editor') && <Footer />}
-    </>
+    </Suspense>
   );
 }
 

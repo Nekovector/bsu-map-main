@@ -1,0 +1,19 @@
+{
+  "footer": {
+    "title": "BSU interactive map",
+    "text": "Belarussian state university"
+  },
+  "navbar": {
+    "buildings": "Interactive map",
+    "scientists": "Scientist's roads",
+    "about": "About project",
+    "contacts": "Contacts"
+  },
+  "scientistsPage": {
+    "selector": "Select scientist",
+    "button": {
+      "open": "Show",
+      "close": "Hide"
+    }
+  }
+}

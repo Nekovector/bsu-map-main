@@ -1,10 +1,14 @@
 import React from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Navbar, Container, Nav } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
+import LanguageSelector from '../language-selector';
 
 import '../../../custom-bootstrap-coloring.scss';
 
 export default function NavBar() {
+  const { t } = useTranslation();
+
   return (
     <Navbar expand="sm" bg="primary" variant="dark">
       <Container>
@@ -21,25 +25,22 @@ export default function NavBar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <LinkContainer to="/">
-              <Nav.Link>Интерактивная карта</Nav.Link>
+              <Nav.Link>{t('navbar.buildings')}</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/scientists">
-              <Nav.Link>Дорогами ученых</Nav.Link>
+              <Nav.Link>{t('navbar.scientists')}</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/about">
-              <Nav.Link>О Проекте</Nav.Link>
+              <Nav.Link>{t('navbar.about')}</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/in-development">
-              <Nav.Link>Здания</Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/in-development">
-              <Nav.Link>Люди</Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/in-development">
-              <Nav.Link>Контакты</Nav.Link>
+              <Nav.Link>{t('navbar.contacts')}</Nav.Link>
             </LinkContainer>
           </Nav>
-        </Navbar.Collapse>          
+          <Nav>
+            <LanguageSelector />
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );

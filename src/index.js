@@ -3,6 +3,8 @@ import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+//Locales settings
+import './helpers/i18next.js';
 
 import './index.css';
 

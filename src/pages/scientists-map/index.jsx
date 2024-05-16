@@ -13,7 +13,7 @@ import { ScientistsService } from '../../services/scientists.service';
 import '../../custom-bootstrap-coloring.scss';
 import css from './scientists-map.module.css';
 
-const MarkTransition = ( {coords, ready, setReady} ) => {
+const MarkTransition = ({ coords, ready, setReady }) => {
   const map = useMap();
   useEffect(() => {
     if (ready) {
@@ -56,6 +56,7 @@ export default function ScientistsMap() {
   const switchMenu = () => {
     if (menuIsOpened) {
       setMenuIsOpened(false);
+
       setNumberOfColumns(12);
     } else {
       setMenuIsOpened(true);
@@ -72,27 +73,27 @@ export default function ScientistsMap() {
               url="https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png"
             />
             <ScientistSelector scientistsCollection={scientists} onChange={updateCurrentScientist} />
-            <ToggleButton onClick={switchMenu} />
+            <ToggleButton onClick={switchMenu} menuIsOpened={menuIsOpened} />
             <MarkTransition coords={currentMarkCoords} ready={readyToTransition} setReady={setReadyToTransition} />
             <MarkerClusterGroup>
               {currentScientist && currentScientist.memoryPlaces &&
                 currentScientist.memoryPlaces.map(mPlace => (
-                <Marker
-                  key={mPlace.id}
-                  position={[mPlace.coordinates.latitude, mPlace.coordinates.longitude]}
-                >
-                <Popup ref={popupRef}>
-                  <MemoryPlaceCard memoryPlace={mPlace} popupRef={popupRef} />
-                </Popup>
-                </Marker>
-              ))}
+                  <Marker
+                    key={mPlace.id}
+                    position={[mPlace.coordinates.latitude, mPlace.coordinates.longitude]}
+                  >
+                    <Popup ref={popupRef}>
+                      <MemoryPlaceCard memoryPlace={mPlace} popupRef={popupRef} />
+                    </Popup>
+                  </Marker>
+                ))}
             </MarkerClusterGroup>
           </MapContainer>
         </Col>
         {menuIsOpened && currentScientist &&
           <Col xl={12 - numberOfColumns} className={css.infoCol}>
             <ScientistInfo
-              currentScientist={currentScientist} 
+              currentScientist={currentScientist}
               setMark={setCurrentMarkCoords}
               activateTransition={setReadyToTransition}
             />
