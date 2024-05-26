@@ -5,15 +5,16 @@
 
 .carouselCaption {
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 0.5rem;
-  left: 10%;
-  right: 10%;
-  bottom: 5%;
+  padding: 0.3rem;
+  left: 0;
+  right: 0;
+  bottom: 0%;
   max-height: 30%;
+  overflow-y: hidden;
   text-align: center;
 }
 
 .captionText {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: white;
 }

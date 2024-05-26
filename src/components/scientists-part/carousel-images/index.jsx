@@ -28,7 +28,7 @@ export default function CarouselImages({ memoryPlaceId, popupRef }) {
   return (
     <>
       {photos.length !== 0 &&
-        <Carousel interval={5000} indicators={false}>
+        <Carousel variant="dark" interval={5000} indicators={false}>
           {photos.map((photo, index) => (
             <Carousel.Item key={index}>
               <img
