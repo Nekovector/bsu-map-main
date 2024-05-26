@@ -6,7 +6,7 @@ import CarouselImages from '../carousel-images';
 
 export default function MemoryPlaceCard({ memoryPlace, popupRef }) {
   return (
-    <Card border="primary">
+    <Card border="primary" style={{ width: '300px' }}>
       <Card.Header as="h4">{memoryPlace.name}</Card.Header>
       <Card.Body>
         <CarouselImages memoryPlaceId={memoryPlace.id} popupRef={popupRef} />
