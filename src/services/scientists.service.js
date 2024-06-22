@@ -5,6 +5,10 @@ export const ScientistsService = {
         const response = await Api.get('/api/scientists');
         return response.data;
     },
+    getScientistById: async (id) => {
+        const response = await Api.get(`/api/scientists/${id}`);
+        return response.data;
+    },
     getScientistsNames: async () => {
         const response = await Api.get('/api/scientists/names');
         return response.data;
